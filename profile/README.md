@@ -1,18 +1,18 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/AgentBastion-Enterprise%20AI%20Bastion%20Host-1a73e8?style=for-the-badge&logo=shield&logoColor=white" />
+  <img src="https://img.shields.io/badge/ThinkWatch-Enterprise%20AI%20Observability%20Gateway-1a73e8?style=for-the-badge&logo=shield&logoColor=white" />
 </p>
 
-<h1 align="center">🛡️ AgentBastion</h1>
+<h1 align="center">🛡️ ThinkWatch</h1>
 
 <h3 align="center">The Control Plane for Autonomous Agents</h3>
 
 <p align="center">
-  <b>Enterprise-grade bastion host for AI — Secure, audit, and govern every AI API call and MCP tool invocation across your organization.</b>
+  <b>Enterprise-grade gateway for AI — Secure, audit, and govern every AI API call and MCP tool invocation across your organization.</b>
 </p>
 
 <p align="center">
-  <a href="https://github.com/AgentBastion/AgentBastion/stargazers">
-    <img src="https://img.shields.io/github/stars/AgentBastion/AgentBastion?style=social" alt="GitHub Stars" />
+  <a href="https://github.com/ThinkWatchProject/ThinkWatch/stargazers">
+    <img src="https://img.shields.io/github/stars/ThinkWatchProject/ThinkWatch?style=social" alt="GitHub Stars" />
   </a>
   &nbsp;
   <img src="https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white" />
@@ -25,13 +25,13 @@
 
 ---
 
-## 🏰 What is AgentBastion?
+## 🏰 What is ThinkWatch?
 
-Just as an **SSH bastion host** is the single gateway through which all server access must flow, **AgentBastion** is the single gateway through which all AI access must flow.
+Just as an **SSH bastion host** is the single gateway through which all server access must flow, **ThinkWatch** is the single gateway through which all AI access must flow.
 
 > Every model request. Every tool call. Every token. **Authenticated, authorized, rate-limited, logged, and accounted for.**
 
-As AI agents proliferate across engineering teams, organizations face a growing governance challenge — API keys scattered everywhere, zero visibility into usage, no access control, compliance gaps, and cost surprises. **AgentBastion solves all of this with a single deployment.**
+As AI agents proliferate across engineering teams, organizations face a growing governance challenge — API keys scattered everywhere, zero visibility into usage, no access control, compliance gaps, and cost surprises. **ThinkWatch solves all of this with a single deployment.**
 
 ```
                     ┌──────────────────────────────────────┐
@@ -53,7 +53,7 @@ As AI agents proliferate across engineering teams, organizations face a growing 
 <table>
   <tr>
     <td>🔑 <b>Virtual API Keys</b></td>
-    <td>Issue scoped <code>ab-</code> keys per team, project, or developer. Automatic rotation with grace periods, inactivity timeout, and expiry warnings.</td>
+    <td>Issue scoped <code>tw-</code> keys per team, project, or developer. Automatic rotation with grace periods, inactivity timeout, and expiry warnings.</td>
   </tr>
   <tr>
     <td>🔀 <b>Multi-Provider Routing</b></td>
@@ -103,7 +103,7 @@ docker compose -f deploy/docker-compose.dev.yml up -d
 
 # 2. Configure and start the backend (Gateway :3000 + Console :3001)
 cp .env.example .env
-cargo run -p agent-bastion-server
+cargo run -p think-watch-server
 
 # 3. Start the frontend dev server
 cd web && pnpm install && pnpm dev
@@ -143,16 +143,16 @@ cd web && pnpm install && pnpm dev
 
 | Repository | Description |
 |-----------|-------------|
-| [**AgentBastion/AgentBastion**](https://github.com/AgentBastion/AgentBastion) | 🛡️ Core platform — AI bastion host server, gateway, MCP proxy, and web console (Rust + React) |
+| [**ThinkWatchProject/ThinkWatch**](https://github.com/ThinkWatchProject/ThinkWatch) | 🛡️ Core platform — AI gateway server, proxy, MCP proxy, and web console (Rust + React) |
 
 ---
 
 ## 📄 License
 
-AgentBastion is source-available under the [Business Source License 1.1](https://github.com/AgentBastion/AgentBastion/blob/main/LICENSE).  
+ThinkWatch is source-available under the [Business Source License 1.1](https://github.com/ThinkWatchProject/ThinkWatch/blob/main/LICENSE).  
 Non-production use is **free**. Production use is **free** up to `10,000,000` Billable Tokens and `10,000` MCP Tool Calls per UTC calendar month.
 
-See [LICENSING.md](https://github.com/AgentBastion/AgentBastion/blob/main/LICENSING.md) for full details, tiering model, and the changeover to GPL-2.0-or-later.
+See [LICENSING.md](https://github.com/ThinkWatchProject/ThinkWatch/blob/main/LICENSING.md) for full details, tiering model, and the changeover to GPL-2.0-or-later.
 
 ---
 
