@@ -5,8 +5,6 @@
   </picture>
 </p>
 
-<h1 align="center">ThinkWatch</h1>
-
 <h3 align="center">The Control Plane for Autonomous Agents</h3>
 
 <p align="center">
