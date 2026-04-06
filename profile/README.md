@@ -1,8 +1,11 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/ThinkWatch-Enterprise%20AI%20Observability%20Gateway-1a73e8?style=for-the-badge&logo=shield&logoColor=white" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.png">
+    <img src="assets/logo.png" alt="ThinkWatch" width="480">
+  </picture>
 </p>
 
-<h1 align="center">🛡️ ThinkWatch</h1>
+<h1 align="center">ThinkWatch</h1>
 
 <h3 align="center">The Control Plane for Autonomous Agents</h3>
 
