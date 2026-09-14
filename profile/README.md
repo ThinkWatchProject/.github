@@ -5,34 +5,71 @@
   </picture>
 </p>
 
-<h3 align="center">The Control Plane for Autonomous Agents</h3>
+<h3 align="center">One gateway between your AI clients and the models they call</h3>
+
+<p align="center">For a whole organization, or for one developer's machine.</p>
 
 <p align="center">
-  <b>Enterprise-grade gateway for AI — Secure, audit, and govern every AI API call and MCP tool invocation across your organization.</b>
-</p>
-
-<p align="center">
-  <a href="https://github.com/ThinkWatchProject/ThinkWatch/stargazers">
-    <img src="https://img.shields.io/github/stars/ThinkWatchProject/ThinkWatch?style=social" alt="GitHub Stars" />
-  </a>
-  &nbsp;
-  <img src="https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white" />
-  <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" />
-  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white" />
-  <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" />
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" />
-  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white" />
+  <a href="https://thinkwat.ch">Website</a> ·
+  <a href="https://thinkwat.ch/docs">Docs</a> ·
+  <a href="https://github.com/ThinkWatchProject/ThinkWatch">ThinkWatch</a> ·
+  <a href="https://github.com/ThinkWatchProject/ThinkWatch-Lite">ThinkWatch Lite</a> ·
+  <a href="https://github.com/ThinkWatchProject/ThinkWatch-Core">ThinkWatch Core</a>
 </p>
 
 ---
 
-## 🏰 What is ThinkWatch?
+Claude Code, Codex, Cursor, and your own agents talk to model providers
+directly. API keys end up scattered, nobody sees what was sent, and the bill is
+a surprise. ThinkWatch puts a gateway in that path, so every model request and
+tool call is routed, checked, and accounted for.
 
-Just as an **SSH bastion host** is the single gateway through which all server access must flow, **ThinkWatch** is the single gateway through which all AI access must flow.
+It comes as two products, built for different people.
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🏢 ThinkWatch</h3>
+      <p><b>For teams and enterprises</b></p>
+      <p>A self-hosted AI API and MCP gateway. Virtual keys, SSO and RBAC, audit logs, rate limits and budgets, and cost attribution, all in one control plane.</p>
+      <p>
+        <a href="https://github.com/ThinkWatchProject/ThinkWatch/stargazers"><img src="https://img.shields.io/github/stars/ThinkWatchProject/ThinkWatch?style=social" alt="GitHub Stars" /></a>
+      </p>
+      <p><sub>Rust · React · PostgreSQL · Redis · Kubernetes<br>Business Source License 1.1</sub></p>
+      <p><a href="https://github.com/ThinkWatchProject/ThinkWatch"><b>ThinkWatchProject/ThinkWatch</b></a></p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>💻 ThinkWatch Lite</h3>
+      <p><b>For individual developers</b></p>
+      <p>A desktop app for a local AI API gateway. Point Claude Code or Codex at a local port, and see what a session cost, where each request was routed, and what was redacted before it left your machine.</p>
+      <p><sub>Tauri 2 · React 19 · Rust<br>MIT License · in development, macOS first</sub></p>
+      <p><a href="https://github.com/ThinkWatchProject/ThinkWatch-Lite"><b>ThinkWatchProject/ThinkWatch-Lite</b></a></p>
+    </td>
+  </tr>
+</table>
+
+Underneath both sits [**ThinkWatch Core**](https://github.com/ThinkWatchProject/ThinkWatch-Core),
+a set of MIT-licensed Rust crates for routing, failover, cost accounting, and
+redaction.
+
+## Which one is for you?
+
+| If you… | Use |
+|---|---|
+| run AI access for a team and need keys, permissions, audit, and budgets in one place | **ThinkWatch** |
+| need to govern MCP tool calls across an organization | **ThinkWatch** |
+| are one developer who wants to know what your coding agents cost and where their requests go | **ThinkWatch Lite** |
+| are building your own gateway, or want the routing and redaction engine as a library | **ThinkWatch Core** |
+
+---
+
+## 🏢 ThinkWatch: the AI bastion host
+
+Just as an SSH bastion host is the single gateway through which all server
+access flows, ThinkWatch is the single gateway through which all AI access
+flows.
 
 > Every model request. Every tool call. Every token. **Authenticated, authorized, rate-limited, logged, and accounted for.**
-
-As AI agents proliferate across engineering teams, organizations face a growing governance challenge — API keys scattered everywhere, zero visibility into usage, no access control, compliance gaps, and cost surprises. **ThinkWatch solves all of this with a single deployment.**
 
 ```
                     ┌──────────────────────────────────────┐
@@ -43,118 +80,66 @@ As AI agents proliferate across engineering teams, organizations face a growing 
                     └──────────────────────────────────────┘
                     ┌──────────────────────────────────────┐
  Admin Browser ────>│    Console  :3001                    │
-                    │    Management UI + Admin API          │
+                    │    Management UI + Admin API         │
                     └──────────────────────────────────────┘
 ```
 
----
+- **AI API gateway.** OpenAI, Anthropic, Google Gemini, Azure OpenAI, and AWS Bedrock behind one endpoint, with scoped virtual keys per team, project, or developer.
+- **MCP gateway.** A central tool proxy with namespace isolation, tool-level RBAC, and an audit trail for every invocation.
+- **Security and compliance.** SSO through any OIDC provider, role-based access control, PII redaction, and encryption at rest.
+- **Rate limits and budgets.** Request and token limits per key or per user, with spend budgets and alerts.
+- **Observability.** Searchable audit logs, cost analytics, and Prometheus metrics.
 
-## ✨ Core Features
+Start with the [Quick Start](https://github.com/ThinkWatchProject/ThinkWatch#quick-start), or read the [docs](https://thinkwat.ch/docs).
 
-<table>
-  <tr>
-    <td>🔑 <b>Virtual API Keys</b></td>
-    <td>Issue scoped <code>tw-</code> keys per team, project, or developer. Automatic rotation with grace periods, inactivity timeout, and expiry warnings.</td>
-  </tr>
-  <tr>
-    <td>🔀 <b>Multi-Provider Routing</b></td>
-    <td>OpenAI, Anthropic, Google Gemini, Azure OpenAI, AWS Bedrock — all behind a single unified endpoint. Drop-in replacement for Cursor, Cline, Claude Code, and OpenAI/Anthropic SDKs.</td>
-  </tr>
-  <tr>
-    <td>🛠️ <b>MCP Gateway</b></td>
-    <td>Centralized tool proxy with namespace isolation (<code>github__create_issue</code>, <code>postgres__query</code>), tool-level RBAC, and full audit trail for every invocation.</td>
-  </tr>
-  <tr>
-    <td>💰 <b>Cost Tracking</b></td>
-    <td>Per-model pricing with budget alerts, team attribution, and month-to-date spend analytics. No more unexplained AI bills.</td>
-  </tr>
-  <tr>
-    <td>🔒 <b>RBAC & SSO</b></td>
-    <td>5-tier role-based access control (Super Admin → Viewer). Plug into Zitadel, Okta, Azure AD, or any OIDC provider.</td>
-  </tr>
-  <tr>
-    <td>📋 <b>Audit Logs</b></td>
-    <td>Full-text searchable audit trail powered by Quickwit with S3-backed cloud-native storage. Forward to any SIEM via Syslog, Kafka, or HTTP webhook.</td>
-  </tr>
-  <tr>
-    <td>⚡ <b>Rate Limiting</b></td>
-    <td>Sliding-window RPM/TPM limits via Redis, per key or per user. Built-in circuit breaker with configurable threshold and retry backoff.</td>
-  </tr>
-  <tr>
-    <td>📈 <b>Prometheus Metrics</b></td>
-    <td>Ready-to-use <code>/metrics</code> endpoint with request counts, latency histograms, token totals, rate limit stats, and circuit breaker state.</td>
-  </tr>
-  <tr>
-    <td>🛡️ <b>Security-First Design</b></td>
-    <td>AES-256-GCM encryption at rest, distroless containers (2 MB runtime), dual-port architecture, CSP headers, and SHA-256 key hashing.</td>
-  </tr>
-  <tr>
-    <td>🔧 <b>Dynamic Configuration</b></td>
-    <td>Web UI settings console, first-run setup wizard, built-in configuration guide for popular AI clients, and multi-instance sync via Redis Pub/Sub.</td>
-  </tr>
-</table>
+## 💻 ThinkWatch Lite: your local gateway, in the menu bar
 
----
+- **What a session cost, and how far to trust that number.** Measured, estimated, and unpriced are shown separately, never added together.
+- **Where each request went, and why.** The rule it matched, the policy group, and the full failover chain.
+- **What went out with it.** Secrets caught on their way to an untrusted upstream, redactions applied, and tool calls that looked dangerous.
+- **Spend at a glance.** Today's spend, or remaining subscription quota, right in the menu bar.
 
-## 🚀 Quick Start
+ThinkWatch Lite is in development. macOS comes first, and for now you run it
+from source:
 
 ```bash
-# 1. Start infrastructure (PostgreSQL, Redis, Quickwit, Zitadel)
-docker compose -f deploy/docker-compose.dev.yml up -d
-
-# 2. Configure and start the backend (Gateway :3000 + Console :3001)
-cp .env.example .env
-cargo run -p think-watch-server
-
-# 3. Start the frontend dev server
-cd web && pnpm install && pnpm dev
-
-# 4. Complete the setup wizard at http://localhost:5173/setup
+pnpm install
+pnpm tauri dev
 ```
 
----
+## 🧩 ThinkWatch Core: the shared engine
 
-## 🏗️ Tech Stack
+Rule-based routing, mid-flight failover, cost accounting against a price
+snapshot, outbound secret redaction, and inspection of tool calls coming back
+from upstream. `twcore` is a complete, self-contained gateway binary built from
+these crates:
 
-| Layer | Technology |
-|-------|-----------|
-| **Backend** | Rust · Axum 0.8 · SQLx 0.8 · OpenTelemetry |
-| **Frontend** | React 19 · TypeScript 6 · Vite 8 · shadcn/ui · Tailwind CSS 4 |
-| **Database** | PostgreSQL 18 |
-| **Cache & Rate Limiting** | Redis 8 |
-| **Audit Log Search** | Quickwit 0.8 (S3-backed, cloud-native) |
-| **Object Storage** | AWS S3 / GCS / Azure Blob / RustFS (S3-compatible) |
-| **SSO** | Zitadel (or any OIDC provider) |
-| **Containers** | Distroless · Helm Chart for Kubernetes |
-
----
-
-## 📦 Port Architecture
-
-| Port | Server | Exposure | Purpose |
-|------|--------|----------|---------|
-| `3000` | Gateway | **Public** — expose to AI clients | `/v1/chat/completions`, `/v1/messages`, `/v1/responses`, `/mcp`, `/metrics`, `/health/*` |
-| `3001` | Console | **Internal** — behind VPN/firewall | `/api/*` management endpoints · Web UI |
-
-> In production, **only port 3000** should be reachable from the internet. Port 3001 should be restricted to your admin network.
+```bash
+cargo run -p twcore -- init     # write a commented config.yaml
+cargo run -p twcore -- serve    # start the gateway and control plane
+```
 
 ---
 
 ## 📚 Repositories
 
-| Repository | Description |
-|-----------|-------------|
-| [**ThinkWatchProject/ThinkWatch**](https://github.com/ThinkWatchProject/ThinkWatch) | 🛡️ Core platform — AI gateway server, proxy, MCP proxy, and web console (Rust + React) |
-
----
+| Repository | What it is | License |
+|---|---|---|
+| [**ThinkWatch**](https://github.com/ThinkWatchProject/ThinkWatch) | Enterprise AI API and MCP gateway: server, proxy, and web console | BSL 1.1 |
+| [**ThinkWatch Lite**](https://github.com/ThinkWatchProject/ThinkWatch-Lite) | Desktop app for individual developers | MIT |
+| [**ThinkWatch Core**](https://github.com/ThinkWatchProject/ThinkWatch-Core) | Shared gateway engine, as Rust crates and the `twcore` binary | MIT |
+| [**thinkwatch.github.io**](https://github.com/ThinkWatchProject/thinkwatch.github.io) | Source of [thinkwat.ch](https://thinkwat.ch) | |
 
 ## 📄 License
 
-ThinkWatch is source-available under the [Business Source License 1.1](https://github.com/ThinkWatchProject/ThinkWatch/blob/main/LICENSE).  
-Non-production use is **free**. Production use is **free** up to `10,000,000` Billable Tokens and `10,000` MCP Tool Calls per UTC calendar month.
+**ThinkWatch Lite** and **ThinkWatch Core** are released under the MIT License.
 
-See [LICENSING.md](https://github.com/ThinkWatchProject/ThinkWatch/blob/main/LICENSING.md) for full details, tiering model, and the changeover to GPL-2.0-or-later.
+**ThinkWatch** is source-available under the [Business Source License 1.1](https://github.com/ThinkWatchProject/ThinkWatch/blob/main/LICENSE).
+Non-production use is free. Production use is free up to `10,000,000` Billable
+Tokens and `10,000` MCP Tool Calls per UTC calendar month. See
+[LICENSING.md](https://github.com/ThinkWatchProject/ThinkWatch/blob/main/LICENSING.md)
+for the full terms, the tiering model, and the changeover to GPL-2.0-or-later.
 
 ---
 
-<p align="center">Made with ❤️ for AI-native engineering teams</p>
+<p align="center">Made with ❤️ for AI-native engineers and teams</p>
