@@ -108,8 +108,11 @@ brew install --cask thinkwatchproject/tap/thinkwatch-lite
 
 Or download the disk image from the
 [releases page](https://github.com/ThinkWatchProject/ThinkWatch-Lite/releases).
-The interface is currently in Simplified Chinese; an English interface is in
-development.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="/assets/lite-overview-dark.png">
+  <img src="/assets/lite-overview-light.png" alt="ThinkWatch Lite's usage overview: tokens, cost and requests, a 24-hour trend stacked by model, the leaderboard by model and the cache hit rate">
+</picture>
 
 ## 🧩 ThinkWatch Core: the shared engine
 
