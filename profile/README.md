@@ -41,8 +41,8 @@ It comes as two products, built for different people.
     <td width="50%" valign="top">
       <h3>💻 ThinkWatch Lite</h3>
       <p><b>For individual developers</b></p>
-      <p>A menu-bar app for a local AI API gateway. Point Claude Code, Codex CLI or another client at a local port, and see what each request cost, which upstream served it and why, and what was sent along with it.</p>
-      <p><sub>Tauri 2 · React 19 · Rust<br>MIT License · macOS 12 or later, Apple Silicon</sub></p>
+      <p>A desktop app for a local AI API gateway, in the macOS menu bar or the Windows notification area. Point Claude Code, Codex CLI or another client at a local port, and see what each request cost, which upstream served it and why, and what was sent along with it.</p>
+      <p><sub>Tauri 2 · React 19 · Rust<br>MIT License · macOS 12 or later, Apple Silicon · Windows 10 or later, x64 or ARM64</sub></p>
       <p><a href="https://github.com/ThinkWatchProject/ThinkWatch-Lite"><b>ThinkWatchProject/ThinkWatch-Lite</b></a></p>
     </td>
   </tr>
@@ -92,22 +92,25 @@ access flows.
 
 Start with the [Quick Start](https://github.com/ThinkWatchProject/ThinkWatch#quick-start), or read the [docs](https://thinkwat.ch/docs).
 
-## 💻 ThinkWatch Lite: your local gateway, in the menu bar
+## 💻 ThinkWatch Lite: your local gateway, on your desktop
 
 - **What it cost, and how far to trust that number.** Measured, estimated, and unpriced are reported separately and never added together; usage served by a subscription is counted apart from billed usage.
 - **Where each request went, and why.** The rule it matched, the group it went through, and every upstream attempt with its status and duration. A dry run answers the same question before any traffic.
 - **What went out with it.** Secrets replaced on their way to an untrusted upstream and restored in the response, dangerous tool calls cut off mid-stream, and client configuration files scanned for hidden characters and dangerous commands.
-- **Cost at a glance.** Today's cost and output rate, or the quota left on a subscription account, right in the menu bar.
+- **Cost at a glance.** Today's cost and output rate, or the quota left on a subscription account, right in the menu bar or the notification area.
 
-Released for macOS 12 or later on Apple Silicon. The gateway ships inside the
-app, and the app updates itself:
+Released for macOS 12 or later on Apple Silicon, and for Windows 10 or later on
+x64 and ARM64. The gateway ships inside the app, and the app updates itself. On
+macOS:
 
 ```bash
 brew install --cask thinkwatchproject/tap/thinkwatch-lite
 ```
 
 Or download the disk image from the
-[releases page](https://github.com/ThinkWatchProject/ThinkWatch-Lite/releases).
+[releases page](https://github.com/ThinkWatchProject/ThinkWatch-Lite/releases),
+which also has the Windows installers. The Windows installers are not
+code-signed: when SmartScreen stops one, choose **More info**, then **Run anyway**.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="/assets/lite-overview-dark.png">
