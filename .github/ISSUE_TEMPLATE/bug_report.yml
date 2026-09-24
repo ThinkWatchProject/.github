@@ -1,0 +1,99 @@
+name: Bug report
+description: Report a problem in ThinkWatch Lite, ThinkWatch Core or ThinkWatch Enterprise.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Issues are public. Remove API keys, tokens and internal host names from everything entered below.
+
+        Security vulnerabilities are not reported here; the [security policy](https://github.com/ThinkWatchProject/.github/blob/main/SECURITY.md) describes how to report them privately.
+
+  - type: dropdown
+    id: product
+    attributes:
+      label: Product
+      options:
+        - ThinkWatch Lite
+        - ThinkWatch Core
+        - ThinkWatch Enterprise
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: >-
+        ThinkWatch Lite: Settings › About.
+        ThinkWatch Core: the output of `twcore --version`.
+        ThinkWatch Enterprise: Settings › General in the console, or the image tag.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Operating system and architecture
+      description: For a server, the machine the product runs on.
+      options:
+        - macOS, Apple silicon (arm64)
+        - Windows, x64
+        - Windows, ARM64
+        - Linux, x86_64
+        - Linux, aarch64
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: os-version
+    attributes:
+      label: Operating system version
+      placeholder: macOS 15.6, Windows 11 24H2, Ubuntu 24.04
+
+  - type: dropdown
+    id: install
+    attributes:
+      label: Install method
+      options:
+        - "Lite: Homebrew cask"
+        - "Lite: disk image (.dmg)"
+        - "Lite: Windows installer (.exe)"
+        - "Lite: Linux install script"
+        - "Lite: AppImage, downloaded by hand"
+        - "Lite: run from source"
+        - "Core: install script on a Linux server"
+        - "Core: release binary, installed by hand"
+        - "Core: built from source"
+        - "Enterprise: Docker Compose"
+        - "Enterprise: Kubernetes (Helm chart)"
+        - "Enterprise: built from source"
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: The steps that lead to the problem, and what the product did.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What was expected
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: >-
+        ThinkWatch Lite: Settings › Diagnostics bundle › Generate writes a file with keys and addresses redacted; review it, then paste its contents.
+        ThinkWatch Core under systemd: the output of `journalctl -u twcore`.
+        ThinkWatch Enterprise: the output of `docker compose logs server`, or of `kubectl logs` for the server pod.
+      render: text

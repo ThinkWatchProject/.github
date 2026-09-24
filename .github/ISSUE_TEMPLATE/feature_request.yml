@@ -1,0 +1,41 @@
+name: Feature request
+description: Propose a change or an addition to ThinkWatch Lite, ThinkWatch Core or ThinkWatch Enterprise.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The platform and packaging decisions for ThinkWatch Lite that are settled are listed in its [contributing guide](https://github.com/ThinkWatchProject/ThinkWatch-Lite/blob/main/CONTRIBUTING.md#scope-so-you-dont-build-something-that-gets-declined).
+
+  - type: dropdown
+    id: product
+    attributes:
+      label: Product
+      options:
+        - ThinkWatch Lite
+        - ThinkWatch Core
+        - ThinkWatch Enterprise
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What cannot be done today, or takes more effort than it should. Describe the situation rather than a solution.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: What the product would do differently.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Workarounds in use today, or other approaches that were considered.
