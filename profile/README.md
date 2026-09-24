@@ -41,8 +41,8 @@ It comes as two products, built for different people.
     <td width="50%" valign="top">
       <h3>💻 ThinkWatch Lite</h3>
       <p><b>For individual developers</b></p>
-      <p>A desktop app for a local AI API gateway, in the macOS menu bar or the Windows notification area. Point Claude Code, Codex CLI or another client at a local port, and see what each request cost, which upstream served it and why, and what was sent along with it.</p>
-      <p><sub>Tauri 2 · React 19 · Rust<br>MIT License · macOS 12 or later, Apple Silicon · Windows 10 21H2 or later, x64 or ARM64</sub></p>
+      <p>A desktop app for a local AI API gateway, in the macOS menu bar, the Windows notification area or the Linux system tray. Point Claude Code, Codex CLI or another client at a local port, and see what each request cost, which upstream served it and why, and what was sent along with it.</p>
+      <p><sub>Tauri 2 · React 19 · Rust<br>MIT License · macOS 12 or later, Apple Silicon · Windows 10 21H2 or later, x64 or ARM64 · Linux, x86_64 or aarch64</sub></p>
       <p><a href="https://github.com/ThinkWatchProject/ThinkWatch-Lite"><b>ThinkWatchProject/ThinkWatch-Lite</b></a></p>
     </td>
   </tr>
@@ -97,18 +97,25 @@ Start with the [Quick Start](https://github.com/ThinkWatchProject/ThinkWatch#qui
 - **What it cost, and how far to trust that number.** Measured, estimated, and unpriced are reported separately and never added together; usage served by a subscription is counted apart from billed usage.
 - **Where each request went, and why.** The rule it matched, the group it went through, and every upstream attempt with its status and duration. A dry run answers the same question before any traffic.
 - **What went out with it.** Secrets replaced on their way to an untrusted upstream and restored in the response, dangerous tool calls cut off mid-stream, and client configuration files scanned for hidden characters and dangerous commands.
-- **Cost at a glance.** Today's cost and output rate, or the quota left on a subscription account, right in the menu bar or the notification area.
+- **Cost at a glance.** Today's cost and output rate, or the quota left on a subscription account, right in the menu bar, the notification area or the system tray.
 
-Released for macOS 12 or later on Apple Silicon, and for Windows 10 21H2 or later
-on x64 and ARM64. The gateway ships inside the app, and the app updates itself.
+Released for macOS 12 or later on Apple Silicon, for Windows 10 21H2 or later
+on x64 and ARM64, and for Linux (Ubuntu 22.04, Debian 12, Fedora 36 or later) on
+x86_64 and aarch64. The gateway ships inside the app, and the app updates itself.
 [thinkwat.ch/lite](https://thinkwat.ch/lite#install) has one-click downloads of
-the latest version for both. On macOS, Homebrew works too:
+the latest version for each. On macOS, Homebrew works too:
 
 ```bash
 brew install --cask thinkwatchproject/tap/thinkwatch-lite
 ```
 
-The disk image and the Windows installers are also on the
+On Linux, one line installs the AppImage:
+
+```bash
+curl -fsSL https://github.com/ThinkWatchProject/ThinkWatch-Lite/releases/latest/download/install.sh | sh
+```
+
+The disk image, the Windows installers and the AppImages are also on the
 [latest release](https://github.com/ThinkWatchProject/ThinkWatch-Lite/releases/latest).
 The Windows installers are not code-signed: when SmartScreen stops one, choose
 **More info**, then **Run anyway**.
@@ -137,7 +144,7 @@ cargo run -p twcore -- serve    # start the gateway and control plane
 | Repository | What it is | License |
 |---|---|---|
 | [**ThinkWatch Enterprise**](https://github.com/ThinkWatchProject/ThinkWatch) | Self-hosted AI API and MCP gateway: server, proxy, and web console | BSL 1.1 |
-| [**ThinkWatch Lite**](https://github.com/ThinkWatchProject/ThinkWatch-Lite) | macOS menu-bar app for individual developers | MIT |
+| [**ThinkWatch Lite**](https://github.com/ThinkWatchProject/ThinkWatch-Lite) | Desktop app for individual developers, on macOS, Windows and Linux | MIT |
 | [**ThinkWatch Core**](https://github.com/ThinkWatchProject/ThinkWatch-Core) | Shared gateway engine, as Rust crates and the `twcore` binary | MIT |
 | [**thinkwatch.github.io**](https://github.com/ThinkWatchProject/thinkwatch.github.io) | Source of [thinkwat.ch](https://thinkwat.ch) | |
 
