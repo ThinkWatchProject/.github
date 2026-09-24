@@ -93,7 +93,8 @@ body:
     attributes:
       label: Logs
       description: >-
-        ThinkWatch Lite: Settings › Diagnostics bundle › Generate writes a file with keys and addresses redacted; review it, then paste its contents.
+        ThinkWatch Lite using its local core: Settings › Diagnostics bundle › Generate writes a file with keys and addresses redacted; review it, then paste its contents.
+        ThinkWatch Lite connected to a remote core: the diagnostics bundle is not offered; collect the logs on the server, as for ThinkWatch Core.
         ThinkWatch Core under systemd: the output of `journalctl -u twcore`.
         ThinkWatch Enterprise: the output of `docker compose logs server`, or of `kubectl logs` for the server pod.
       render: text

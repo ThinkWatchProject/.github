@@ -12,8 +12,10 @@ issue, pull request, commit or comment.
 - If the affected repository offers **Report a vulnerability** under its
   **Security and quality** tab, use it. The report is visible only to the
   reporter and the maintainers.
-- Otherwise, open an issue in the affected repository titled
-  **Security contact request**, with nothing else in it: no description of
+- Otherwise, open a blank issue in the affected repository: on its
+  **New issue** page, choose **Blank issue** at the bottom of the list,
+  never the **Bug report** form. Title the issue
+  **Security contact request** and leave the body empty: no description of
   the problem, no affected component and no proof of concept. A maintainer
   answers by opening a draft security advisory in that repository and
   adding the reporter to it. A draft advisory is visible only to the
@@ -23,7 +25,7 @@ issue, pull request, commit or comment.
 If it is unclear which repository is affected, any of the three product
 repositories will do.
 
-## What to include
+## What to include in the private report
 
 - The product and its version. ThinkWatch Lite shows it under
   Settings › About, ThinkWatch Core prints it with `twcore --version`, and
