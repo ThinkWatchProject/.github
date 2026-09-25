@@ -42,7 +42,7 @@ It comes as two products, built for different people.
       <h3>💻 ThinkWatch Lite</h3>
       <p><b>For individual developers</b></p>
       <p>A desktop app for a local AI API gateway, in the macOS menu bar, the Windows notification area or the Linux system tray. Point Claude Code, Codex CLI or another client at a local port, and see what each request cost, which upstream served it and why, and what was sent along with it.</p>
-      <p><sub>Tauri 2 · React 19 · Rust<br>MIT License · macOS 12 or later, Apple Silicon · Windows 10 21H2 or later, x64 or ARM64 · Linux, x86_64 or aarch64</sub></p>
+      <p><sub>Tauri 2 · React 19 · Rust<br>MIT License · macOS 12 or later, Apple silicon · Windows 10 21H2 or later, x64 or ARM64 · Linux, x86_64 or aarch64</sub></p>
       <p><a href="https://github.com/ThinkWatchProject/ThinkWatch-Lite"><b>ThinkWatchProject/ThinkWatch-Lite</b></a></p>
     </td>
   </tr>
@@ -99,7 +99,7 @@ Start with the [Quick Start](https://github.com/ThinkWatchProject/ThinkWatch#qui
 - **What went out with it.** Secrets replaced on their way to an untrusted upstream and restored in the response, dangerous tool calls cut off mid-stream, and client configuration files scanned for hidden characters and dangerous commands.
 - **Cost at a glance.** Today's cost and output rate, or the quota left on a subscription account, right in the menu bar, the notification area or the system tray.
 
-Released for macOS 12 or later on Apple Silicon, for Windows 10 21H2 or later
+Released for macOS 12 or later on Apple silicon, for Windows 10 21H2 or later
 on x64 and ARM64, and for Linux (Ubuntu 22.04, Debian 12, Fedora 36 or later) on
 x86_64 and aarch64. The gateway ships inside the app, and the app updates itself.
 [thinkwat.ch/lite](https://thinkwat.ch/lite#install) has one-click downloads of
