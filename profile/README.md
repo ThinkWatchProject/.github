@@ -56,7 +56,7 @@ It is the single entry point for a company's model requests and MCP tool calls.
 - **Per-user MCP identity.** Upstream MCP servers receive the calling user's
   own token instead of a shared service account.
 - **Limits and budgets.** Request and token limits and spending budgets per
-  user, API key or role, for model requests and MCP tool calls alike.
+  user, API key or role; rate limits cover MCP tool calls as well.
 - **Audit and cost.** Every request and tool call is logged, with usage and
   cost analytics.
 
