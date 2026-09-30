@@ -25,17 +25,20 @@ no change to the client.
 
 - **Connect once, switch freely.** Seven clients are set up in one step, with
   the change previewed and the original file backed up.
-- **Security.** API keys can be replaced before a request leaves the machine,
-  and dangerous tool calls can be cut off. MCP servers, skills, hooks and
-  client configuration are scanned for hidden characters and prompt injection.
+- **Protection against relays.** A relay sees every request and can rewrite
+  every answer. API keys can be replaced before a request leaves the machine,
+  and a tool call slipped into an answer that downloads and runs code or sends
+  out credentials can be cut off before the client runs it. MCP servers,
+  skills, hooks and client configuration are scanned for hidden characters and
+  prompt injection.
 - **Every request traceable.** Each request records the rule it matched, every
   failover attempt and its cost, and can be replayed against another upstream.
 - **Honest cost.** Estimates are marked as estimates, and unpriced requests are
   counted separately rather than as zero.
 
-macOS, Windows and Linux · MIT ·
+Runs on macOS, Windows and Linux; MIT licensed.
 [Download](https://thinkwat.ch/lite/#install) ·
-[ThinkWatch-Lite](https://github.com/ThinkWatchProject/ThinkWatch-Lite)
+[Source code](https://github.com/ThinkWatchProject/ThinkWatch-Lite)
 
 ```bash
 brew install --cask thinkwatchproject/tap/thinkwatch-lite
@@ -60,9 +63,9 @@ It is the single entry point for a company's model requests and MCP tool calls.
 - **Audit and cost.** Every request and tool call is logged, with usage and
   cost analytics.
 
-Docker Compose or Kubernetes · Business Source License 1.1 ·
+Deployed with Docker Compose or Kubernetes; Business Source License 1.1.
 [Quick start](https://github.com/ThinkWatchProject/ThinkWatch#quick-start) ·
-[ThinkWatch](https://github.com/ThinkWatchProject/ThinkWatch)
+[Source code](https://github.com/ThinkWatchProject/ThinkWatch)
 
 ## ThinkWatch Core
 
@@ -76,14 +79,14 @@ curl -fsSL https://raw.githubusercontent.com/ThinkWatchProject/ThinkWatch-Core/m
 ```
 
 [Running core on a server](https://github.com/ThinkWatchProject/ThinkWatch-Core/blob/main/docs/server.md) ·
-[ThinkWatch-Core](https://github.com/ThinkWatchProject/ThinkWatch-Core)
+[Source code](https://github.com/ThinkWatchProject/ThinkWatch-Core)
 
 ## Choosing a product
 
 | Need | Product |
 |---|---|
 | One developer's AI clients: switching, security, request records | Lite |
-| A gateway on a Linux server, managed from the desktop | Core with Lite |
+| A gateway on a Linux server, managed from the desktop | Core on the server, managed from Lite |
 | AI and MCP access for a team: SSO, permissions, audit, budgets | Enterprise |
 
 Lite and Core are MIT. Enterprise is free for non-production use and for
