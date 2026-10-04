@@ -23,8 +23,9 @@ A desktop app that runs a local gateway for Claude Code, Codex and other AI
 clients. Clients connect once; changing upstreams or models afterwards needs
 no change to the client.
 
-- **Connect once, switch freely.** Seven clients are set up in one step, with
-  the change previewed and the original file backed up.
+- **Connect once, switch freely.** Twelve clients, among them Claude Code,
+  Claude Desktop, Codex and opencode, are set up in one step, with the change
+  previewed and the original file backed up.
 - **Protection against relays.** A relay sees every request and can rewrite
   every answer. API keys can be replaced before a request leaves the machine,
   and a tool call slipped into an answer that downloads and runs code or sends
