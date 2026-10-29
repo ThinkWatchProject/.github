@@ -47,7 +47,7 @@ brew install --cask thinkwatchproject/tap/thinkwatch-lite
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="/assets/lite-overview-dark.png">
-  <img src="/assets/lite-overview-light.png" alt="The ThinkWatch Lite overview page: tokens, cost and requests for the last seven days compared with the seven days before, a trend chart by model with periods of failures marked, and usage by model">
+  <img src="/assets/lite-overview-light.png" alt="The ThinkWatch Lite overview page: tokens, cost, requests, cache hits, first token and traffic for the last seven days compared with the seven days before, a chart of the selected metric, where the tokens went by model, and the quotas and balances the upstreams report">
 </picture>
 
 ## ThinkWatch Enterprise
